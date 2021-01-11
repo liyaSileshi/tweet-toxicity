@@ -36,12 +36,12 @@ class App extends React.Component {
     const model = await this.resolveModel()
     const classifying = await model.classify([sentence])
     this.setState({
-      predictions: classifying[6].results[0].probabilities[0],
+      predictions: classifying[6].results[0].probabilities[1],
       predictObj: classifying
     })
     
     console.log(classifying)
-    return classifying[6].results[0].probabilities[0]
+    return classifying[6].results[0].probabilities[1]
   }
 
   //render the visualization
@@ -56,9 +56,9 @@ class App extends React.Component {
     for (let key in predictObj) {
       if (predictObj.hasOwnProperty(key)) {
           console.log(key + " -> " + predictObj[key]['label']);
-          console.log(predictObj[key].results[0].probabilities[0])
+          console.log(predictObj[key].results[0].probabilities[1])
           //append object to output array
-          outputArr.push({index: predictObj[key]['label'], value: predictObj[key].results[0].probabilities[0]})
+          outputArr.push({index: predictObj[key]['label'], value: predictObj[key].results[0].probabilities[1]})
       }
     }
     this.setState({barData: outputArr})
@@ -75,7 +75,7 @@ class App extends React.Component {
     console.log('bar data',this.state.barData)
     return (
       <div className="App">
-      <p>What is your terrible sentence?</p>
+      <p>What is your tweet?</p>
       <input 
         type="text" 
         value={this.state.sentence} 
