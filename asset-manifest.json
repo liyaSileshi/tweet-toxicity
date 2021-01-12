@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/tweet-toxicity/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/tweet-toxicity/static/js/main.0af8baf8.chunk.js",
-    "main.js.map": "/tweet-toxicity/static/js/main.0af8baf8.chunk.js.map",
-    "runtime-main.js": "/tweet-toxicity/static/js/runtime-main.276c057b.js",
-    "runtime-main.js.map": "/tweet-toxicity/static/js/runtime-main.276c057b.js.map",
-    "static/js/2.ce94f125.chunk.js": "/tweet-toxicity/static/js/2.ce94f125.chunk.js",
-    "static/js/2.ce94f125.chunk.js.map": "/tweet-toxicity/static/js/2.ce94f125.chunk.js.map",
-    "static/js/3.c276566a.chunk.js": "/tweet-toxicity/static/js/3.c276566a.chunk.js",
-    "static/js/3.c276566a.chunk.js.map": "/tweet-toxicity/static/js/3.c276566a.chunk.js.map",
+    "main.css": "/tweet-toxicity/static/css/main.19459101.chunk.css",
+    "main.js": "/tweet-toxicity/static/js/main.210cd480.chunk.js",
+    "main.js.map": "/tweet-toxicity/static/js/main.210cd480.chunk.js.map",
+    "runtime-main.js": "/tweet-toxicity/static/js/runtime-main.ecb3c3c7.js",
+    "runtime-main.js.map": "/tweet-toxicity/static/js/runtime-main.ecb3c3c7.js.map",
+    "static/js/2.311bc4e7.chunk.js": "/tweet-toxicity/static/js/2.311bc4e7.chunk.js",
+    "static/js/2.311bc4e7.chunk.js.map": "/tweet-toxicity/static/js/2.311bc4e7.chunk.js.map",
+    "static/js/3.daab17a0.chunk.js": "/tweet-toxicity/static/js/3.daab17a0.chunk.js",
+    "static/js/3.daab17a0.chunk.js.map": "/tweet-toxicity/static/js/3.daab17a0.chunk.js.map",
     "index.html": "/tweet-toxicity/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/tweet-toxicity/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.ce94f125.chunk.js.LICENSE.txt": "/tweet-toxicity/static/js/2.ce94f125.chunk.js.LICENSE.txt"
+    "static/css/main.19459101.chunk.css.map": "/tweet-toxicity/static/css/main.19459101.chunk.css.map",
+    "static/js/2.311bc4e7.chunk.js.LICENSE.txt": "/tweet-toxicity/static/js/2.311bc4e7.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/tweet-toxicity/static/media/tweet-header.c5331f24.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.276c057b.js",
-    "static/js/2.ce94f125.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.0af8baf8.chunk.js"
+    "static/js/runtime-main.ecb3c3c7.js",
+    "static/js/2.311bc4e7.chunk.js",
+    "static/css/main.19459101.chunk.css",
+    "static/js/main.210cd480.chunk.js"
   ]
 }
