@@ -1,10 +1,10 @@
 import './App.css';
 import './styles.css';
+import './Tweet.css';
 import React from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as tfvis from '@tensorflow/tfjs-vis';
 import * as toxicity from '@tensorflow-models/toxicity';
-
 
 
 class Tweet extends React.Component {
@@ -14,7 +14,7 @@ class Tweet extends React.Component {
     this.state = {
       predictions: null,
       predictObj : {},
-      sentence: 'you suck',
+      sentence: '',
       barData : []
     };
 
@@ -75,10 +75,12 @@ class Tweet extends React.Component {
       <div className="App">
       <p className='h1'>What is your tweet? 🐦</p>
       <input 
+        placeholder='type something here...'
         type="text" 
         value={this.state.sentence} 
         onChange={(e) => this.setState({sentence: e.target.value})} 
       />
+      
       <button 
         type='submit'
         onClick={() => 
@@ -98,7 +100,7 @@ class Tweet extends React.Component {
 
 
       <button 
-        className='info'
+        className='success'
         onClick={() => 
         {
           //get the value for the bar graph
