@@ -1,0 +1,373 @@
+:root {
+  --primary-color: cornflowerblue;
+  --foreground-color: #fff;
+  --color-background: rgb(101, 100, 100);
+  --color-foreground: white;
+  --color-dark: rgb(77, 76, 76);
+  /* --color-light */
+  /* --color-md-light */
+  --color-primary: var(--primary-color);
+  --color-info: #107888;
+  --color-success: rgb(43, 172, 43);
+  --color-danger: rgb(244, 99, 73);
+  /* --color-callout */
+  /* --color-lightest */
+}
+
+body {
+  /* background-color: rgb(245, 240, 233); */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  /* background-color: rgb(252, 240, 240); */
+  background-color: white;
+  color: #444;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+
+  padding: 0;
+}
+
+/* hero style */
+.hero {
+  width: 100%;
+  height: 600px;
+  background-color: palevioletred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.section {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  font-size: 3rem;
+  color: rgb(26, 24, 24);
+}
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+} 
+
+.h1, h1 {
+  font-size: 2.5rem;
+}
+
+.h2, h2 {
+  font-size: 2rem;
+}
+
+.h3, h3{
+  font-size: 1.75rem;
+}
+
+.h4, h4 {
+  font-size: 1.5rem;
+}
+
+.h5, h5 {
+  font-size: 1.25rem;
+}
+
+.h6, h6 {
+  font-size: 1rem;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+strong {
+  font-weight: 700;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+button {
+  --bg-color: var(--primary-color);
+  --fg-color: var(--foreground-color);
+
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  border-color: var(--bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 0.5em 0.75em;
+  border: 2px solid;
+  border-radius: 0.5em;
+  font-size: 1em;
+  transition: 300ms;
+  cursor: pointer;
+  font-weight: 300;
+  outline: none;
+}
+
+button:hover {
+  --bg-color: rgb(46, 114, 240);
+  /* background-color: rgb(46, 114, 240); */
+}
+
+button.primary {
+  background-color: var(--bg-color);
+}
+
+button.primary:hover {
+  --bg-color: rgb(46, 114, 240);
+  /* background-color: rgb(46, 114, 240); */
+}
+
+button.secondary {
+  --bg-color: rgb(163, 168, 177);
+}
+
+button.secondary:hover {
+  --bg-color: rgb(130, 131, 133);
+}
+
+button.success {
+  --bg-color: rgb(43, 172, 43);
+}
+
+button.success:hover {
+  --bg-color: rgb(32, 131, 32);
+}
+
+button.danger {
+  --bg-color: rgb(244, 99, 73);
+}
+
+button.danger:hover {
+  --bg-color: rgb(255, 38, 0);
+}
+
+button.warning {
+  --bg-color: rgb(223, 211, 44);
+  /* --fg-color: rgb(28, 27, 27); */
+  color: rgb(28, 27, 27);
+  border-color: rgb(223, 211, 44);
+}
+
+button.warning:hover {
+  --bg-color: rgb(244, 230, 34);
+  border-color: rgb(244, 230, 34);
+}
+
+button.info {
+  --bg-color: #17a2b8;
+}
+
+button.info:hover {
+  --bg-color: #107888;
+}
+
+button.light {
+  --bg-color: rgb(238, 233, 233);
+  --fg-color: rgb(28, 27, 27);
+  border-color: rgb(238, 233, 233);
+}
+
+button.light:hover {
+  --bg-color: rgb(223, 217, 217);
+  border-color: rgb(223, 217, 217);
+}
+
+button.dark {
+  --bg-color: rgb(60, 57, 57);
+}
+
+button.dark:hover {
+  --bg-color: rgb(11, 10, 10);
+}
+
+button.link {
+  background-color: transparent;
+  color: rgb(36, 108, 240);
+  border-color: transparent;
+}
+
+/* not working */
+button.link:hover {
+  text-decoration: rgb(46, 114, 240);
+}
+
+button.outline {
+  color: var(--bg-color);
+  --fg-color: #fff;
+  background-color: var(--fg-color);
+}
+
+button.outline:hover {
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+}
+
+/* style for form inputs */
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  --selected-color: rgba(240, 144, 0, 0.919);
+  font-size: 1em;
+  font-weight: 200;
+  color: rgb(79, 76, 76);
+  border: 1px solid #eee;
+  padding: 1em;
+  border-radius: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: 1px 1px 3px rgb(159, 148, 148) inset;
+  outline: none !important;
+  transition: 300ms;
+}
+
+
+input[type=submit] {
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: rgb(247, 211, 7);
+  border: none;
+}
+
+input[type=submit], button[type=submit] {
+  align-self: flex-end;
+  outline: none;
+  margin: 1em;
+}
+
+label {
+  margin: 1em;
+  font-weight: 400;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+/* input focus styles */
+input[type=text]:focus, 
+input[type=email]:focus, 
+input[type=password]:focus, 
+textarea:focus {
+  border-color: var(--selected-color);
+}
+
+/* styling navbars */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+  background-color: rgb(216, 127, 157);
+  /* background-color: #222; */
+  color: #eee;
+}
+
+.navbar > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; 
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.navbar a {
+  color: rgb(130, 242, 231);
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5em;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+.navbar a:visited { 
+  color: #fff;
+}
+
+/* page footer*/
+.page-footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: palevioletred;
+  color: white;
+}
+
+.page-footer ul{
+  list-style: none;
+}
+
+.page-footer a{
+  display: block;
+  padding:0.5em;
+  text-decoration:none;
+  color: white;
+} 
+
+.modal {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.241);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.modal > * {
+width: 80%;
+background-color: white;
+}
+
+.modal.hide {
+  display: none;
+}
+
+#buttons, #components, .cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card {
+  border: solid 1px rgba(152, 150, 150, 0.488);
+  /* border: solid 1px black; */
+  margin: 2em;
+  width: 300px;
+}
+
+.card p {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+section {
+  border-bottom: solid palevioletred 1px;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+
+pre {
+  position: relative;
+}
+
+#hide-modal {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

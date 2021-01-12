@@ -4,10 +4,10 @@ import React from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as tfvis from '@tensorflow/tfjs-vis';
 import * as toxicity from '@tensorflow-models/toxicity';
-import Header from './Header';
 
 
-class App extends React.Component {
+
+class Tweet extends React.Component {
 
   constructor(props) {
     super(props);
@@ -73,7 +73,6 @@ class App extends React.Component {
     return (
 
       <div className="App">
-      <Header />
       <p className='h1'>What is your tweet? 🐦</p>
       <input 
         type="text" 
@@ -122,4 +121,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Tweet;

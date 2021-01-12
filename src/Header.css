@@ -1,0 +1,9 @@
+.header {
+  height: 5em;
+  margin: 0;
+  background-color: #0488f885;
+  background-image:url('tweet-header.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
