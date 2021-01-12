@@ -1,6 +1,6 @@
 # Tweet toxicity classifier
 
-Classifies a tweeet as toxic or not by giving the probability of it's toxicity.
+Classifies a tweet as toxic or not by giving the probability of its toxicity.
 
 Live link: 🔗 https://liyasileshi.github.io/tweet-toxicity/
 
