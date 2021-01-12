@@ -45,7 +45,7 @@ npm start
 * [React](https://reactjs.org/)
 * CSS
 
-## Authors 🇪🇹
+## Authors 
 
 * **Liya Tilahun** 
 
