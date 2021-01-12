@@ -12,10 +12,17 @@ class Tweet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      predictions: null,
+      // predictions: null,
       predictObj : {},
       sentence: '',
-      barData : []
+      barData : [],
+      toxicity: 0,
+      identityAttack: 0,
+      insult: 0,
+      obscene: 0,
+      severeToxicity: 0,
+      sexualExplicit: 0,
+      threat: 0
     };
 
     // Render to visor
@@ -33,10 +40,15 @@ class Tweet extends React.Component {
     const model = await this.resolveModel()
     const classifying = await model.classify([sentence])
     this.setState({
-      predictions: classifying[6].results[0].probabilities[1],
+      identityAttack: classifying[0].results[0].probabilities[1].toFixed(3),
+      insult: classifying[1].results[0].probabilities[1].toFixed(3),
+      obscene: classifying[2].results[0].probabilities[1].toFixed(3),
+      severeToxicity: classifying[3].results[0].probabilities[1].toFixed(3),
+      sexualExplicit: classifying[4].results[0].probabilities[1].toFixed(3),
+      threat: classifying[5].results[0].probabilities[1].toFixed(3),
+      toxicity: classifying[6].results[0].probabilities[1].toFixed(3),
       predictObj: classifying
     })
-    
     console.log(classifying)
     return classifying[6].results[0].probabilities[1]
   }
@@ -112,7 +124,15 @@ class Tweet extends React.Component {
       >
         Click for Viz
       </button>
-      Toxicity likelihood: {this.state.predictions}
+      <div className='data'>
+        <p>Identity attack likelihood: {this.state.identityAttack}</p>
+        <p>Insult likelihood: {this.state.insult}</p>
+        <p>Obscene likelihood: {this.state.obscene}</p>
+        <p>Severe toxicity likelihood: {this.state.severeToxicity}</p>
+        <p>Sexual explicit likelihood: {this.state.sexualExplicit}</p>
+        <p>Threat likelihood: {this.state.threat}</p>
+        <p>Toxicity likelihood: {this.state.toxicity}</p>
+      </div>
       
       {/* render the visualization */}
       {/* {this.solveViz()} */}
