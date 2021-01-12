@@ -1,6 +1,7 @@
 import './App.css';
 import './styles.css';
 import './Tweet.css';
+import Loading from './Loading';
 import React from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as tfvis from '@tensorflow/tfjs-vis';
@@ -22,7 +23,8 @@ class Tweet extends React.Component {
       obscene: 0,
       severeToxicity: 0,
       sexualExplicit: 0,
-      threat: 0
+      threat: 0,
+      isLoading: false
     };
 
     // Render to visor
@@ -37,6 +39,7 @@ class Tweet extends React.Component {
   }
   
   async predict(sentence) {
+    // add loading here
     const model = await this.resolveModel()
     const classifying = await model.classify([sentence])
     this.setState({
@@ -47,7 +50,8 @@ class Tweet extends React.Component {
       sexualExplicit: classifying[4].results[0].probabilities[1].toFixed(3),
       threat: classifying[5].results[0].probabilities[1].toFixed(3),
       toxicity: classifying[6].results[0].probabilities[1].toFixed(3),
-      predictObj: classifying
+      predictObj: classifying,
+      isLoading: false
     })
     console.log(classifying)
     return classifying[6].results[0].probabilities[1]
@@ -74,6 +78,27 @@ class Tweet extends React.Component {
     console.log('bar data',this.state.barData)
   }
 
+  checkRender() {
+    if (this.state.isLoading) { //renders when waiting for json request data
+      return (
+        <div className='data'>
+         <Loading />
+        </div>
+      )
+    } 
+    return (
+    <div className='data'>
+      <p>Identity attack likelihood: {this.state.identityAttack}</p>
+      <p>Insult likelihood: {this.state.insult}</p>
+      <p>Obscene likelihood: {this.state.obscene}</p>
+      <p>Severe toxicity likelihood: {this.state.severeToxicity}</p>
+      <p>Sexual explicit likelihood: {this.state.sexualExplicit}</p>
+      <p>Threat likelihood: {this.state.threat}</p>
+      <p>Toxicity likelihood: {this.state.toxicity}</p>
+    </div>
+    )
+  }
+
   render() {
     
     // console.log(tfvis.render.barchart(surface, data))
@@ -97,6 +122,9 @@ class Tweet extends React.Component {
         type='submit'
         onClick={() => 
         {
+          //loading component
+          this.setState({isLoading : true})
+
           this.predict(this.state.sentence)
           //get the value for the bar graph
           this.getBarValue()
@@ -115,6 +143,7 @@ class Tweet extends React.Component {
         className='success'
         onClick={() => 
         {
+          
           //get the value for the bar graph
           this.getBarValue()
           // re render the visuals
@@ -124,16 +153,8 @@ class Tweet extends React.Component {
       >
         Click for Viz
       </button>
-      <div className='data'>
-        <p>Identity attack likelihood: {this.state.identityAttack}</p>
-        <p>Insult likelihood: {this.state.insult}</p>
-        <p>Obscene likelihood: {this.state.obscene}</p>
-        <p>Severe toxicity likelihood: {this.state.severeToxicity}</p>
-        <p>Sexual explicit likelihood: {this.state.sexualExplicit}</p>
-        <p>Threat likelihood: {this.state.threat}</p>
-        <p>Toxicity likelihood: {this.state.toxicity}</p>
-      </div>
-      
+
+       {this.checkRender()}
       {/* render the visualization */}
       {/* {this.solveViz()} */}
       
